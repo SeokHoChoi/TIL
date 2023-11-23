@@ -58,6 +58,14 @@ const deepCopy = (target, visited = new WeakMap()) => {
       const deepCopiedSet = deepCopy(value, visited);
       copied.add(deepCopiedSet);
     });
+  } else if (Array.isArray(target)) {
+    // 수정된 부분
+    copied = [];
+    visited.set(target, copied);
+    target.forEach((element) => {
+      const deepCopiedElement = deepCopy(element, visited);
+      copied.push(deepCopiedElement);
+    });
   } else if (checkInstance(target, Object)) {
     copied = {};
     visited.set(target, copied);
@@ -70,6 +78,7 @@ const deepCopy = (target, visited = new WeakMap()) => {
 
   return copied;
 };
+
 const deepCopyResult = deepCopy(testObject);
 console.log(testObject, 'test');
 console.log(deepCopyResult, 'copied');
@@ -94,8 +103,8 @@ const deepCopyUsingJSON = (target) => {
   return JSON.parse(JSON.stringify(target));
 };
 const deepCopyResultUsingJSON = deepCopyUsingJSON(testObject);
-console.log(testObject, 'test');
-console.log(deepCopyResultUsingJSON, 'copied');
+// console.log(testObject, 'test');
+// console.log(deepCopyResultUsingJSON, 'copied');
 
 /*
 - 함수의 깊은 복사 -
