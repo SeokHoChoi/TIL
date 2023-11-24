@@ -25,7 +25,7 @@ const checkInstance = (instance, constructor) => {
  * visited 맵에서 객체가 발견되면 해당 깊은 복사된 객체가 즉시 반환되므로
  * 동일한 객체가 여러 번 복사되는 것을 방지할 수 있습니다.
  */
-const deepCopy = (target, visited = new Map()) => {
+export const deepCopy = (target, visited = new Map()) => {
   if (visited.has(target)) {
     return visited.get(target);
   }

@@ -1,9 +1,11 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
     "jest": "^29.7.0"
   },
-  "name": "til",
-  "description": "Today I Learned",
+  "name": "until",
+  "description": "I Learned Today",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
