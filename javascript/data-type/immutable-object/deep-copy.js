@@ -1,6 +1,6 @@
 'use strict';
 
-import { testObject } from './test-object.js'; // 파일명에 '.js' 입력 필수
+import { createTestObject } from './test-object.js'; // 파일명에 '.js' 입력 필수
 
 /**
  * 주어진 객체가 특정 생성자의 인스턴스인지 확인합니다.
@@ -66,11 +66,11 @@ export const deepCopy = (target, visited = new Map()) => {
   return copied;
 };
 
-const deepCopyResult = deepCopy(testObject);
-console.log(testObject, 'test');
+const deepCopyResult = deepCopy(createTestObject());
+console.log(createTestObject(), 'test');
 console.log(deepCopyResult, 'copied');
 deepCopyResult.map.set('mapTest', 'test');
-console.log(testObject, 'test');
+console.log(createTestObject(), 'test');
 console.log(deepCopyResult, 'copied');
 
 /**
@@ -89,8 +89,8 @@ const deepCopyUsingJSON = (target) => {
   // 객체를 JSON 문자열로 변환 후 다시 JSON으로 파싱
   return JSON.parse(JSON.stringify(target));
 };
-const deepCopyResultUsingJSON = deepCopyUsingJSON(testObject);
-// console.log(testObject, 'test');
+const deepCopyResultUsingJSON = deepCopyUsingJSON(createTestObject());
+// console.log(createTestObject(), 'test');
 // console.log(deepCopyResultUsingJSON, 'copied');
 
 /*
