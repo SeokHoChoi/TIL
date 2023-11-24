@@ -59,7 +59,6 @@ const deepCopy = (target, visited = new WeakMap()) => {
       copied.add(deepCopiedSet);
     });
   } else if (Array.isArray(target)) {
-    // 수정된 부분
     copied = [];
     visited.set(target, copied);
     target.forEach((element) => {
