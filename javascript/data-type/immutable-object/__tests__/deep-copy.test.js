@@ -25,7 +25,7 @@ const checkInstance = (instance, constructor) => {
   return instance instanceof constructor;
 };
 
-const deepCopy = (target, visited = new WeakMap()) => {
+const deepCopy = (target, visited = new Map()) => {
   if (visited.has(target)) {
     return visited.get(target);
   }

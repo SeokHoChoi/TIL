@@ -17,27 +17,15 @@ const checkInstance = (instance, constructor) => {
  *  객체의 깊은 복사를 수행하는 범용 함수
  *
  * @param {Object} target - 깊은 복사를 수행할 객체
- * @param {WeakMap} visited - 순환 참조를 방지하기 위한 WeakMap
+ * @param {Map} visited - 순환 참조를 방지하기 위한 Map
  * @return {Object} - 깊은 복사가 완료된 객체
  *
  * @description
- * visited는 순환 참조를 방지하기 위한 목적으로 사용됩니다.
- * 객체를 딥 카피하다보면 객체 간에 참조가 순환되는 경우가 발생할 수 있는데,
- * 이를 방지하기 위해 한번이라도 방문한 객체를 WeakMap을 사용하여 저장합니다.
- * WeakMap의 키는 반드시 객체이어야 하며, 해당 객체에 대한 참조가 없어지면 자동으로 메모리에서 제거됩니다.
- * 이를 통해 순환 참조에 따른 메모리 누수를 방지할 수 있습니다.
- * 즉, 무한 루프 방지입니다.
- * visited에는 이전에 방문한 객체들이 저장되어, 순환 참조를 감지하고 처리하는 데 사용됩니다.
- *
- * const obj1 = { prop: 1 };
- * const obj2 = { prop: 2 };
- *
- * obj1.test = obj1;
- * obj2.test = obj2;
- *
- *  의 예시에서 WeakMap는 유용합니다.
+ * 객체를 복사하기 전에 객체를 조회하여 이미 방문한 적이 있는지 확인합니다.
+ * visited 맵에서 객체가 발견되면 해당 깊은 복사된 객체가 즉시 반환되므로
+ * 동일한 객체가 여러 번 복사되는 것을 방지할 수 있습니다.
  */
-const deepCopy = (target, visited = new WeakMap()) => {
+const deepCopy = (target, visited = new Map()) => {
   if (visited.has(target)) {
     return visited.get(target);
   }
