@@ -69,7 +69,11 @@ export const deepCopy = (target, visited = new Map()) => {
 const deepCopyResult = deepCopy(createTestObject());
 console.log(createTestObject(), 'test');
 console.log(deepCopyResult, 'copied');
-deepCopyResult.map.set('mapTest', 'test');
+deepCopyResult.set.forEach((element) => {
+  if (typeof element === 'object' && element !== null && 'nested' in element) {
+    console.log((element.nested = 'test'));
+  }
+});
 console.log(createTestObject(), 'test');
 console.log(deepCopyResult, 'copied');
 
