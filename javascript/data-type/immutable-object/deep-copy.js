@@ -1,5 +1,3 @@
-'use strict';
-
 import { createTestObject } from './test-object.js'; // 파일명에 '.js' 입력 필수
 
 /**
