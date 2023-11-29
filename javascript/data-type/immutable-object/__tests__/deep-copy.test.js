@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createTestObject } from '../test-object';
 import { deepCopy } from '../deep-copy';
 
@@ -61,3 +62,5 @@ describe('deepCopy', () => {
     expect(isDeepCopy).toBe(true);
   });
 });
+=======
+>>>>>>> d51dcc9 (TddDeepCopy init)
