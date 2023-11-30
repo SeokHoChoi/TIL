@@ -30,5 +30,11 @@ export const createTestObject = () => {
 
     // Set
     set: new Set([1, 'two', { nested: 'set' }]),
+
+    // Date
+    date: new Date(),
+
+    // RegExp
+    reg: new RegExp(),
   };
 };
