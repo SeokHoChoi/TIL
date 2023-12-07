@@ -6,6 +6,9 @@ import { createTestObject } from './test-object.js';
  * @param {Object} instance - Array, Map, Set, Object 등의 다양한 인스턴스가 들어옵니다.
  * @param {String} type - [object Object] 형식의 문자열이 들어옵니다.
  * @returns [object Object] 형식의 문자열을 반환합니다.
+ *
+ * @description
+ * deep-copy 브랜치에서의 pr 피드백을 반영했습니다.
  */
 const isInstanceType = (instance, type) => {
   return Object.prototype.toString.call(instance) === type;
