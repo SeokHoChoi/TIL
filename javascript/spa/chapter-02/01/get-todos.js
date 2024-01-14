@@ -8,7 +8,7 @@
 const faker = window.faker;
 
 /**
- * @returns {object} 무작위로 생성된 두 개의 단어로 이루어진 텍스트와 임의의 불리언 값을 갖는 객체를 반환합니다.
+ * @returns {Object} 무작위로 생성된 두 개의 단어로 이루어진 텍스트와 임의의 불리언 값을 갖는 객체를 반환합니다.
  * @description
  * 'Grass-roots Unbranded Soft Car'와 같은 문자열을 반환하는 이유는,
  * 이 문자열이 리스트에서 선택된 두개의 단어로 이루어져 있기 때문입니다.
