@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/todomvc-common@1.0.5/base.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/todomvc-app-css@2.1.2/index.css"
+    />
+
+    <!-- 주어진 코드 스니펫에서 사용된 아래의 경로를통해 Faker.js 라이브러리를 외부에서 불러와 사용하는 스크립트태그 -->
+    <!-- 현재는 CDN 링크를 사용한것 입니다. -->
+    <!-- *이 방법 말고는 로컬 파일 다운로드 및 참조 방법도 있음. Faker.js를 로컬로 다운로드 하고, 
+        다운로드한 파일을 프로젝트 폴더에 저장한 후, HTML 파일에서 로컬 경로를 참조할 수 있습니다. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+    <title>Frameworkless Frontend Development: Rendering</title>
+  </head>
+
+  <body>
+    <section class="todoapp">
+      <header class="header">
+        <h1>todos</h1>
+        <input
+          class="new-todo"
+          placeholder="What needs to be done?"
+          autofocus
+        />
+      </header>
+      <section class="main">
+        <input id="toggle-all" class="toggle-all" type="checkbox" />
+        <label for="toggle-all">Mark all as complete</label>
+        <ul class="todo-list"></ul>
+      </section>
+      <footer class="footer">
+        <span class="todo-count">1 Item Left</span>
+        <ul class="filters">
+          <li>
+            <a href="#/">All</a>
+          </li>
+          <li>
+            <a href="#/active">Active</a>
+          </li>
+          <li>
+            <a href="#/completed">Completed</a>
+          </li>
+        </ul>
+        <button class="clear-completed">Clear completed</button>
+      </footer>
+    </section>
+    <footer class="info">
+      <p>Double-click to edit a todo</p>
+      <p>
+        Created by
+        <a href="http://twitter.com/thestrazz86">Francesco Strazzullo</a>
+      </p>
+      <p>Thanks to <a href="http://todomvc.com">TodoMVC</a></p>
+    </footer>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
