@@ -9,7 +9,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:single": "jest"
   },
   "author": "SeokHoChoi",
   "license": "ISC"
