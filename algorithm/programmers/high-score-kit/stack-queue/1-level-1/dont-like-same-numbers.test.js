@@ -1,11 +1,7 @@
 // npm test -- dont-like-same-numbers.test.js
 
-class Stack {
-  push() {}
-  size() {}
-  empty() {}
-  checkSameNumbers() {}
-}
+import { Stack } from './dont-like-same-numbers';
+
 describe('연속되지 않는 숫자를 저장하는 스택', () => {
   let stack;
 
