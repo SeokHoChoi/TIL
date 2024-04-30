@@ -8,7 +8,7 @@
 
 알고리즘에서 테스트 코드를 이용해 보고 싶어 TIL 폴더에 넣게 되었습니다!
 
-- **baekjoon**: 백준 온라인 저지에서 제공하는 알고리즘 문제 해결을 위한 폴더입니다. 테스
+- **baekjoon**: 백준 온라인 저지에서 제공하는 알고리즘 문제 해결을 위한 폴더입니다.
 - **programmers**: 프로그래머스에서 제공하는 알고리즘 문제 해결을 위한 폴더입니다.
 
 ### [javascript 폴더](https://github.com/SeokHoChoi/TIL/tree/main/javascript)
