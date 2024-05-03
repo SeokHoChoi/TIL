@@ -1,8 +1,4 @@
-import {
-  makingDatesWork,
-  makingDeployCounts,
-  solution,
-} from './functional-development';
+import { makingDatesWork, makingDeployCounts, solution } from './index';
 
 describe('makingDatesWork 함수', () => {
   it('진행 상황과 개발 속도를 기반으로 개발 완료까지 걸리는 일 수를 반환해야 합니다', () => {
