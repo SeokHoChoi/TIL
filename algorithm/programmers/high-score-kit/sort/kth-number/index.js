@@ -1,4 +1,4 @@
-export function sliceAndSort(array, start, end) {
+export function sortedNeeds(array, start, end) {
   return array.slice(start - 1, end).sort((a, b) => a - b);
 }
 
@@ -11,7 +11,7 @@ export function solution(array, commands) {
 
   for (const command of commands) {
     const [start, end, pick] = command;
-    const sortedArray = sliceAndSort(array, start, end);
+    const sortedArray = sortedNeeds(array, start, end);
     const kthNumber = findKthNumber(sortedArray, pick);
 
     answer.push(kthNumber);

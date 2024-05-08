@@ -1,4 +1,4 @@
-import { findKthNumber, sliceAndSort, solution } from './index';
+import { findKthNumber, sortedNeeds, solution } from './index';
 
 describe('sliceAndSort 함수', () => {
   it('배열을 주어진 범위로 자르고 정렬한다', () => {
@@ -8,7 +8,7 @@ describe('sliceAndSort 함수', () => {
     const end = 5;
 
     // 실행
-    const result = sliceAndSort(array, start, end);
+    const result = sortedNeeds(array, start, end);
 
     // 검증
     expect(result).toEqual([2, 3, 5, 6]);
