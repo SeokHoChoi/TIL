@@ -1,7 +1,14 @@
+export function sortDesc(citations) {
+  return citations.sort((a, b) => b - a);
+}
+
+export function findHIndex(citations) {
+  return citations.findIndex((citation, index) => citation <= index);
+}
+
 export function solution(citations) {
-  citations.sort((a, b) => b - a);
+  const sortedCitations = sortDesc(citations);
+  const hIndex = findHIndex(sortedCitations);
 
-  const hIndex = citations.findIndex((citation, index) => citation <= index);
-
-  return hIndex === -1 ? citations.length : hIndex;
+  return hIndex === -1 ? sortedCitations.length : hIndex;
 }
