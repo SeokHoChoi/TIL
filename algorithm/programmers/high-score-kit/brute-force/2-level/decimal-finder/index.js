@@ -29,5 +29,7 @@ export function isPrime(num) {
 }
 
 export function solution(numbers) {
-  return generateCombinations(numbers);
+  const decimalCount = generateCombinations(numbers);
+
+  return decimalCount;
 }
