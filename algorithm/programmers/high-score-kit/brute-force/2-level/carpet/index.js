@@ -1,6 +1,5 @@
 export function solution(brown, yellow) {
   let width = 0;
-  const sum = brown + yellow;
 
   for (let i = 1; i <= brown; i++) {
     const cal = i * 2 + 2 * (yellow / (i - 2));
