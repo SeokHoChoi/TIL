@@ -2,13 +2,16 @@ export function solution(brown, yellow) {
   let width = 0;
 
   for (let i = 1; i <= brown; i++) {
-    const cal = i * 2 + 2 * (yellow / (i - 2));
-    if (cal === brown) {
+    const borderLength = i * 2;
+    const innerLength = 2 * (yellow / (i - 2));
+    const totalLength = borderLength + innerLength;
+    if (totalLength === brown) {
       width = i;
     }
   }
+  const height = (brown + 4) / 2 - width;
 
-  return [width, brown / width + yellow / width];
+  return [width, height];
 }
 
 /*
