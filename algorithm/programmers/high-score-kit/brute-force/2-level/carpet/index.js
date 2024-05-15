@@ -5,7 +5,6 @@ export function solution(brown, yellow) {
     const cal = i * 2 + 2 * (yellow / (i - 2));
     if (cal === brown) {
       width = i;
-      console.log(i);
     }
   }
 
