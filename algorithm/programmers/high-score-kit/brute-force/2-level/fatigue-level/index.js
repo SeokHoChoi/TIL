@@ -8,11 +8,13 @@ export function solution(k, dungeons) {
     let maxCount = count;
 
     dungeons.forEach(([minFatigue, consumption], index) => {
-      const canVisit = !visited[index] && fatigue >= minFatigue;
+      const isExploration = fatigue >= minFatigue;
+      const canVisit = !visited[index] && isExploration;
 
       if (canVisit) {
         visited[index] = true;
-        const result = dfs(fatigue - consumption, count + 1, visited);
+        const currentFatigue = fatigue - consumption;
+        const result = dfs(currentFatigue, count + 1, visited);
         maxCount = Math.max(maxCount, result);
         visited[index] = false;
       }
