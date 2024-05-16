@@ -1,4 +1,4 @@
-function solution(k, dungeons) {
+export function solution(k, dungeons) {
   let answer = 0;
   const length = dungeons.length;
   const visited = Array.from({ length }).fill(false);
