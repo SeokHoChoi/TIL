@@ -1,6 +1,6 @@
-import { transformArray } from './index';
+import { findConnected } from './index';
 
-describe('transformArray 함수', () => {
+describe('송전탑에 연결된 전선들을 찾는 findConnected 함수', () => {
   it('2차원 배열을 지정된 형태로 변환한다', () => {
     const input = [
       [1, 2],
@@ -13,13 +13,13 @@ describe('transformArray 함수', () => {
       3: [2, 4],
       4: [3],
     };
-    expect(transformArray(input)).toEqual(expectedOutput);
+    expect(findConnected(input)).toEqual(expectedOutput);
   });
 
   it('빈 배열을 올바르게 처리한다', () => {
     const input = [];
     const expectedOutput = {};
-    expect(transformArray(input)).toEqual(expectedOutput);
+    expect(findConnected(input)).toEqual(expectedOutput);
   });
 
   it('중복 노드가 있는 2차원 배열을 올바르게 변환한다', () => {
@@ -35,6 +35,6 @@ describe('transformArray 함수', () => {
       3: [2, 4, 1],
       4: [3],
     };
-    expect(transformArray(input)).toEqual(expectedOutput);
+    expect(findConnected(input)).toEqual(expectedOutput);
   });
 });
