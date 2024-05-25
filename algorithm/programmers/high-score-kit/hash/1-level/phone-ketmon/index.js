@@ -1,7 +1,8 @@
 export function solution(nums) {
-  const number = nums.length / 2;
+  const upperLimit = nums.length / 2;
+  const ponketmonTypes = new Set(nums);
+  const isExceededLimit = upperLimit > ponketmonTypes.size;
+  const receivedPonketmons = isExceededLimit ? ponketmonTypes.size : upperLimit;
 
-  const set = new Set(nums);
-
-  return number > set.size ? set.size : number;
+  return receivedPonketmons;
 }
