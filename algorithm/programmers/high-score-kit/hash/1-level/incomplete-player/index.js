@@ -1,24 +1,21 @@
-export function solution(participant, completion) {
-  const numOfCompleted = {};
+export function solution(participants, completers) {
+  const completionCount = {};
 
-  completion.forEach((item, index) => {
-    if (numOfCompleted[item]) {
-      numOfCompleted[item] = numOfCompleted[item] + 1;
+  // 완주자 명단을 카운트
+  completers.forEach((name) => {
+    if (completionCount[name]) {
+      completionCount[name]++;
     } else {
-      numOfCompleted[item] = 1;
+      completionCount[name] = 1;
     }
   });
 
-  for (let i = 0; i < participant.length; i++) {
-    const item = participant[i];
-    if (numOfCompleted[item] !== 0 && numOfCompleted[item] !== undefined) {
-      numOfCompleted[item] = numOfCompleted[item] - 1;
-
-      if (numOfCompleted[item] < 0) {
-        return item;
-      }
+  // 참가자 명단을 순회하며 완주하지 못한 사람 찾기
+  for (const participant of participants) {
+    if (completionCount[participant]) {
+      completionCount[participant]--;
     } else {
-      return item;
+      return participant;
     }
   }
 }
