@@ -1,11 +1,24 @@
 export function solution(participant, completion) {
-  for (let i = 0; i < participant.length; i++) {
-    const index = completion.indexOf(participant[i]);
+  const numOfCompleted = {};
 
-    if (index === -1) {
-      return participant[i];
+  completion.forEach((item, index) => {
+    if (numOfCompleted[item]) {
+      numOfCompleted[item] = numOfCompleted[item] + 1;
+    } else {
+      numOfCompleted[item] = 1;
     }
+  });
 
-    completion[index] = true;
+  for (let i = 0; i < participant.length; i++) {
+    const item = participant[i];
+    if (numOfCompleted[item] !== 0 && numOfCompleted[item] !== undefined) {
+      numOfCompleted[item] = numOfCompleted[item] - 1;
+
+      if (numOfCompleted[item] < 0) {
+        return item;
+      }
+    } else {
+      return item;
+    }
   }
 }
