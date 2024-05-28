@@ -2,8 +2,12 @@ export function solution(phone_book) {
   // 해시맵 생성
   const hash = new Map();
 
-  // 해시맵에 전화번호 추가
+  // 중복된 번호인지 확인하고 해시맵에 전화번호 추가
   for (let number of phone_book) {
+    if (hash.has(number)) {
+      // 중복된 번호가 있으면 false 반환
+      return false;
+    }
     hash.set(number, true);
   }
 
