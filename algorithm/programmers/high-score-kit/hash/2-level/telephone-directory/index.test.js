@@ -1,4 +1,28 @@
-import { solution } from '.';
+import { hasDuplicate, hasPrefix, solution } from '.';
+
+describe('중복된 번호 확인', () => {
+  it('중복된 번호가 있는 경우', () => {
+    const phone_book = ['119', '97674223', '119'];
+    expect(hasDuplicate(phone_book)).toBe(true);
+  });
+
+  it('중복된 번호가 없는 경우', () => {
+    const phone_book = ['123', '456', '789'];
+    expect(hasDuplicate(phone_book)).toBe(false);
+  });
+});
+
+describe('접두사 확인', () => {
+  it('접두사가 있는 경우', () => {
+    const phone_book = ['119', '97674223', '1195524421'];
+    expect(hasPrefix(phone_book)).toBe(true);
+  });
+
+  it('접두사가 없는 경우', () => {
+    const phone_book = ['123', '456', '789'];
+    expect(hasPrefix(phone_book)).toBe(false);
+  });
+});
 
 describe('phone_book 접두어 문제', () => {
   it('기본 테스트 케이스1', () => {
