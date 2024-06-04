@@ -4,9 +4,9 @@ export function solution(clothes) {
   clothes.forEach((items) => {
     const type = items[1];
     const isExist = !!clothesMap[type];
-    const prevValue = isExist ? clothesMap[type] : 0;
+    const prevCounted = isExist ? clothesMap[type] : 0;
 
-    clothesMap[type] = prevValue + 1;
+    clothesMap[type] = prevCounted + 1;
   });
 
   let answer = 1;
