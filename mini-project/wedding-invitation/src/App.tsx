@@ -1,4 +1,3 @@
-import './App.css';
 import Test from './components/Test';
 
 import classNames from 'classnames/bind';
