@@ -1,12 +1,43 @@
 import Test from './components/Test';
-
+import { useState} from 'react';
 import classNames from 'classnames/bind';
 import styles from './App.module.scss';
+import { useEffect } from 'react';
 const cx = classNames.bind(styles);
 
 function App() {
+  const [wedding, setWedding] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('http://localhost:8888/wedding').then((response) => {
+      if (response.ok === false) {
+        throw new Error('청첩장 정보를 불러오지 못했습니다.')
+      }
+
+      return response.json();
+    }).then((data) => {
+      setWedding(data);
+    }).catch((error) => {
+      console.log(error)
+      setError(true);
+    }).finally(() => {
+      setLoading(false);
+    })
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Error...</div>
+  }
   return (
     <div className={cx('container')}>
+      {JSON.stringify(wedding)}
       <Test />
     </div>
   );
