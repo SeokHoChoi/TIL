@@ -2,6 +2,7 @@ import Test from './components/Test';
 import { useState} from 'react';
 import classNames from 'classnames/bind';
 import styles from './App.module.scss';
+import FullScreenMessage from './components/shared/FullScreenMessage';
 import { useEffect } from 'react';
 const cx = classNames.bind(styles);
 
@@ -28,12 +29,12 @@ function App() {
     })
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>
+  if (loading === false) {
+    return <FullScreenMessage type="loading"/>
   }
 
   if (error) {
-    return <div>Error...</div>
+    return <FullScreenMessage type="error"/>
   }
   return (
     <div className={cx('container')}>
