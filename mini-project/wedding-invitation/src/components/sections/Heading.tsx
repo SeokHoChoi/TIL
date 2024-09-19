@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 export default function Heading() {
   return (
-    <Section>
+    <Section className={cx('container')}>
       <div className={cx('txt-date')}>24.09.19</div>
       <div className={cx('txt-day')}>THURSDAY</div>
     </Section>

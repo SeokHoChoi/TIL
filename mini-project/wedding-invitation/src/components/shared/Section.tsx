@@ -3,10 +3,12 @@ import styles from './Section.module.scss';
 
 const cx = classNames.bind(styles);
 
-export default function Section({ children }: { children: React.ReactNode}) {
-  return (
-    <section className={cx('container')}>
-      {children}
-    </section>
-  );
+export default function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <section className={cx(['container', className])}>{children}</section>;
 }
